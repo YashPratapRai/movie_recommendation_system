@@ -107,6 +107,8 @@ Used TMDB API to:
 ---
 
 ## 📦 Project Structure
+
+```
 movie-recommendation-system/
 │
 ├── backend/
@@ -119,6 +121,7 @@ movie-recommendation-system/
 ├── app.py              # Streamlit UI
 ├── requirements.txt
 └── README.md
+```
 
 
 ---
