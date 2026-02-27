@@ -110,12 +110,13 @@ Used TMDB API to:
 movie-recommendation-system/
 │
 ├── backend/
-│ ├── main.py
-│ ├── tfidf_matrix.pkl
-│ ├── df.pkl
-│ └── indices.pkl
+│   ├── main.py
+│   ├── tfidf_matrix.pkl
+│   ├── df.pkl
+│   ├── indices.pkl
+│   └── tfidf.pkl
 │
-├── app.py (Streamlit UI)
+├── app.py              # Streamlit UI
 ├── requirements.txt
 └── README.md
 
