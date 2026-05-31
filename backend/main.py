@@ -7,6 +7,7 @@ import pandas as pd
 import httpx
 from fastapi import FastAPI, HTTPException, Query
 from fastapi.middleware.cors import CORSMiddleware
+from sklearn.metrics.pairwise import cosine_similarity
 from pydantic import BaseModel
 from dotenv import load_dotenv
 
@@ -237,8 +238,10 @@ def tfidf_recommend_titles(
     idx = get_local_idx_by_title(query_title)
 
     # query vector
-    qv = tfidf_matrix[idx]
-    scores = (tfidf_matrix @ qv.T).toarray().ravel()
+    scores = cosine_similarity(
+        tfidf_matrix[idx],
+        tfidf_matrix
+    ).flatten()
 
     # sort descending
     order = np.argsort(-scores)
